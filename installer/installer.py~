@@ -1,0 +1,37 @@
+import subprocess
+try:
+    import kivy
+    print("Kivy version is: ", kivy.__version__)
+    
+except:
+    print("Kivy not installed, we let's go to install this now." )    
+    kivy = "apt install python3-kivy  && apt install python-kivy-examples"
+    installer = subprocess.call(kivy, shell= True)
+    print("Returned value:", installer)
+    print("Kivy version is: ", kivy.__version__)
+
+try:
+    import pip
+    print(help(pip))
+
+except Exception as ModuleNotFoundError:
+    print("pip not installed, we let's go to install this now." )    
+    pip = "apt install python3-pip"
+    installer = subprocess.call(pip, shell= True)
+    import pip
+    print(help(pip))
+
+
+def GUI():
+    from kivy.utils import platform
+    if platform == 'linux':
+        print("platform is: ", platform, " Great")
+        from Linux.installer import Instaler
+        Instaler().run()
+
+try:
+    GUI()
+except:
+    print("problems")
+
+
