@@ -1,4 +1,4 @@
-
+#*-* coding:utf-8 *-*
 import subprocess
 try:
     import kivy
@@ -13,7 +13,7 @@ except:
 
 try:
     import pip
-    print(help(pip))
+#    print(help(pip))
 
 except Exception as ModuleNotFoundError:
     print("pip not installed, we let's go to install this now." )    
